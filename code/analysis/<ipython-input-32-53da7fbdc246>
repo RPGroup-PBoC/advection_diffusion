@@ -1,0 +1,13 @@
+auto_corr = np.zeros(len(mt_trimmed))
+
+for n in tqdm(range(len(mt_trimmed))):
+    im1 = io.imread(mt_trimmed[n])
+    im1_norm = amp.image_processing.normalize(im1)
+    for m in range(n,len(mt_trimmed)):
+        im2 = io.imread(mt_trimmed[m])
+        im2_norm = amp.image_processing.normalize(im2)
+        corr = signal.fftconvolve(im1-np.mean(im1),(im2-np.mean(im2))[::-1,::-1])
+        auto_corr[m-n] += np.sum(corr)
+for m in range(len(mt_trimmed)):
+    auto_corr[m] /= (len(mt_trimmed) - m)
+auto_corr /= auto_corr[0]
