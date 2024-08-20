@@ -1,0 +1,10 @@
+,equivalent_diameter,major_axis_length,minor_axis_length,frame_num,time interval (s),filename
+0,703.8201173283044,885.1248518351907,825.0264126764233,12,5,../../../data/active_stress/k401_photobleach/220323_slide1_pos2_k401_mVenus_5s_intervals_100ms_DLPRed_50ms_DLPBlue_skip3_10ms_AllOff_frame3_photobleach_1
+1,483.6062507605525,852.881040121065,472.84155323467655,11,5,../../../data/active_stress/k401_photobleach/220323_slide1_pos3_k401_mVenus_5s_intervals_100ms_DLPRed_50ms_DLPBlue_skip3_10ms_AllOff_frame4_photobleach_1
+2,827.7405333637715,838.3733579648073,818.6205301704811,11,5,../../../data/active_stress/k401_photobleach/220323_slide1_pos4_k401_mVenus_5s_intervals_100ms_DLPRed_50ms_DLPBlue_skip0_10ms_AllOff_frame19_photobleach_1
+3,815.2834261112655,824.2758531042715,807.6715121980529,11,5,../../../data/active_stress/k401_photobleach/220323_slide1_pos5_k401_mVenus_5s_intervals_100ms_DLPRed_50ms_DLPBlue_skip0_10ms_AllOff_frame19_photobleach_1
+4,815.1155245666747,821.408208738148,810.916639305539,23,5,../../../data/active_stress/k401_photobleach/220323_slide1_pos6_k401_mVenus_5s_intervals_100ms_DLPRed_50ms_DLPBlue_skip0_10ms_AllOff_frame35_photobleach_1
+5,797.1549607345446,813.8333890730125,785.6105536923739,11,5,../../../data/active_stress/k401_photobleach/220324_slide1_lane1_pos3_5s_intervals_k401_Venus_10ms_AllOff_100ms_DLPRed_50ms_DLPBlue_skip0_frame27_photobleach_1
+6,573.6806637862517,628.1639134421887,547.6071314425631,24,5,../../../data/active_stress/k401_photobleach/220324_slide1_lane1_pos5_5s_intervals_k401_Venus_10ms_AllOff_100ms_DLPRed_50ms_DLPBlue_skip0_frame35_photobleach_1
+7,797.2204444608541,845.6438857860825,770.0891350752512,21,5,../../../data/active_stress/k401_photobleach/220324_slide1_lane2_pos11_5s_intervals_circle_k401_Venus_10ms_AllOff_100ms_DLPRed_50ms_DLPBlue_skip0_frame35_photobleach_1
+8,610.3133695845419,798.4283313364103,667.4959368268134,31,5,../../../data/active_stress/k401_photobleach/220324_slide1_lane2_pos8_5s_intervals_circle_k401_Venus_10ms_AllOff_100ms_DLPRed_50ms_DLPBlue_skip0_frame67_photobleach_1
