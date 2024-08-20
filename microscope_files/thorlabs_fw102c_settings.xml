@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<DeviceProfileModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Pcount="6">
+  <SpeedMode>High Speed</SpeedMode>
+  <TriggerMode>Input</TriggerMode>
+  <SensorMode>Turn Off</SensorMode>
+  <FilterPosition>1</FilterPosition>
+  <PositionDefined>
+    <Position>
+      <PositionID>1</PositionID>
+      <PositionName>No DLP</PositionName>
+    </Position>
+    <Position>
+      <PositionID>2</PositionID>
+      <PositionName>Red</PositionName>
+    </Position>
+    <Position>
+      <PositionID>3</PositionID>
+      <PositionName>Blue</PositionName>
+    </Position>
+    <Position>
+      <PositionID>4</PositionID>
+      <PositionName>Filter4</PositionName>
+    </Position>
+    <Position>
+      <PositionID>5</PositionID>
+      <PositionName>Filter5</PositionName>
+    </Position>
+    <Position>
+      <PositionID>6</PositionID>
+      <PositionName>Filter6</PositionName>
+    </Position>
+  </PositionDefined>
+  <SequenceDefined>
+    <Step>
+      <PositionID>1</PositionID>
+      <TimeDelay>1</TimeDelay>
+    </Step>
+    <Step>
+      <PositionID>2</PositionID>
+      <TimeDelay>1</TimeDelay>
+    </Step>
+    <Step>
+      <PositionID>3</PositionID>
+      <TimeDelay>1</TimeDelay>
+    </Step>
+  </SequenceDefined>
+</DeviceProfileModel>

@@ -1,0 +1,14 @@
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\PPC102_Example.exe.config
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\PPC102_Example.exe
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\PPC102_Example.pdb
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\ThorLabs.MotionControl.Benchtop.PrecisionPiezoCLI.dll
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\Thorlabs.MotionControl.DeviceManagerCLI.dll
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\Thorlabs.MotionControl.GenericPiezoCLI.dll
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\Thorlabs.MotionControl.PrivateInternal.dll
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\Thorlabs.MotionControl.Tools.Common.dll
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\bin\Debug\Thorlabs.MotionControl.Tools.Logging.dll
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\obj\Debug\PPC102_Example.csprojAssemblyReference.cache
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\obj\Debug\PPC102_Example.csproj.CoreCompileInputs.cache
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\obj\Debug\PPC102_Example.csproj.CopyComplete
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\obj\Debug\PPC102_Example.exe
+C:\Users\manzelmi\source\repos\PPC102_Example\PPC102_Example\obj\Debug\PPC102_Example.pdb

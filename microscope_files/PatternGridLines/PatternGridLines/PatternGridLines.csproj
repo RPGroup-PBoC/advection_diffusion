@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ThorLabs.MotionControl.Benchtop.PrecisionPiezoCLI">
+      <HintPath>..\Thorlabs.MotionControl.Benchtop.PrecisionPiezoCLI.dll</HintPath>
+    </Reference>
+    <Reference Include="Thorlabs.MotionControl.DeviceManagerCLI">
+      <HintPath>..\Thorlabs.MotionControl.DeviceManagerCLI.dll</HintPath>
+    </Reference>
+    <Reference Include="Thorlabs.MotionControl.GenericMotorCLI">
+      <HintPath>..\Thorlabs.MotionControl.GenericMotorCLI.dll</HintPath>
+    </Reference>
+    <Reference Include="Thorlabs.MotionControl.GenericPiezoCLI">
+      <HintPath>..\Thorlabs.MotionControl.GenericPiezoCLI.dll</HintPath>
+    </Reference>
+    <Reference Include="Thorlabs.MotionControl.KCube.BrushlessMotorCLI">
+      <HintPath>..\Thorlabs.MotionControl.KCube.BrushlessMotorCLI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
