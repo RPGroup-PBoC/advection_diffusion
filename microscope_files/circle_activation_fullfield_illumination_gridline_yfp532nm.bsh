@@ -1,0 +1,101 @@
+// Upload imagse from stack to SLM before each frame in MDA.
+// Image corresponds to specific channel: generally fullfield
+// illumination for imaging purposes, patterning for activation
+//
+// Pariksheet Nanda <pariksheet.nanda@...> July 2014
+// Edited by Tyler Ross 10/15/2018
+// Edited by Soichi Hirokawa beginning 03/2020
+//
+// License: Public Domain
+
+import ij.io.Opener; // To load TIFF stack file from disk.
+import ij.ImagePlus; // To hold the opened image.
+import ij.ImageStack; // To access stack pixels.
+
+root = "C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/";
+
+// Mask details to modify:
+mask_start = "laser_";
+activation_pattern = "150um_circle";
+mask_end = "_activation_fullfield.tif";
+
+photobleach_num = 45;
+
+// Load file from disk.
+Opener opener = new Opener();
+// Nomenclature of TIFF stack: pattern and number of frames
+ImagePlus imp = opener.openImage(root + mask_start + activation_pattern + mask_end);
+
+// Get stack info.
+ImageStack stack = imp.getImageStack();
+// n_projections = stack.getSize();
+
+// Get the installed name of the SLM.
+projector = mmc.getSLMDevice();
+
+// Boilerplate when using runnables.
+acq.clearRunnables();
+
+// Runnable to upload each image to the SLM.
+runnable = new Runnable() {
+	int num_red_cycles = 1;
+	int num_yellow_cycles = 1;
+
+	print("Activating mounts.");
+	exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/activate_mounts/activate_mounts/bin/Debug/activate_mounts.exe");
+
+      print("Script Active");
+      public void run() {
+      	
+      	// Pick mask based on Channel Configuration
+      	if (mmc.getCurrentConfig("Channel").equals("Laser")) {
+      		roi=1;
+      		print("Firing red laser.");
+      	} else if (mmc.getCurrentConfig("Channel").equals("YFP_532nm")){
+      		roi=1;
+      		print("Firing YFP laser");
+      	} else if (mmc.getCurrentConfig("Channel").equals("DLP_Blue")){
+      		roi=2;
+      	} else if (mmc.getCurrentConfig("Channel").equals("DLP_Red")){
+      		// Delay projector pattern change according to filter delay
+      		roi=3;
+      		num_red_cycles+=1;
+      	} else if (mmc.getCurrentConfig("Channel").equals("DLP_Yellow")){
+      		roi=3;
+      		num_yellow_cycles+=1;
+      	}
+			// Get the pixels of the stack slice.
+			pixels = stack.getPixels(roi);
+			// Upload the image to the SLM.
+			mmc.setSLMImage(projector, pixels);
+			// Activate the uploaded image on the SLM.
+			mmc.displaySLMImage(projector);
+			// Set delay time for SLM exposure
+			mmc.setSLMExposure(projector, 500); 
+			print("Activated ROI " + roi);
+			mmc.sleep(800);
+
+			if (num_yellow_cycles == photobleach_num) {
+				mmc.setConfig("Channel", "YFP_532nm");
+				mmc.waitForConfig("Channel", "YFP_532nm");
+
+				mmc.setShutterOpen(true);
+				print("Moving in x.");
+				exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/move_in_x/move_in_x/bin/Debug/move_in_x.exe");
+				mmc.setShutterOpen(false);
+				
+				print("Rotating 90 degrees.");
+				exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/rotate_90/rotate_90/bin/Debug/rotate_90.exe");
+				
+				mmc.setShutterOpen(true);
+				print("Moving in y.");
+				exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/move_in_y/move_in_y/bin/Debug/move_in_y.exe");
+				mmc.setShutterOpen(false);
+
+				mmc.setConfig("Channel", "DLP_Blue");
+				mmc.waitForConfig("Channel", "DLP_Blue");
+			}
+   	}
+};
+// Dimension order is frame, position, channel, slice.
+acq.attachRunnable(-1, 0, -1, 0, runnable);
