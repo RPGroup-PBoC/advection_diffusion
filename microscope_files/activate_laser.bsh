@@ -1,0 +1,21 @@
+mmc.setConfig("Channel", "Laser");
+mmc.waitForConfig("Channel", "Laser");
+
+print("Activating mounts.");
+exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/activate_mounts/activate_mounts/bin/Debug/activate_mounts.exe");
+
+mmc.setShutterOpen(true);
+print("Moving in x.");
+exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/move_in_x/move_in_x/bin/Debug/move_in_x.exe");
+mmc.setShutterOpen(false);
+
+print("Rotating 90 degrees.");
+exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/rotate_90/rotate_90/bin/Debug/rotate_90.exe");
+
+mmc.setShutterOpen(true);
+print("Moving in y.");
+exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/move_in_y/move_in_y/bin/Debug/move_in_y.exe");
+mmc.setShutterOpen(false);
+
+print("Deactivating mounts.");
+//exec("C:/Users/rplab_sh/Documents/rp_group_git/active_matter/active_stress/microscope_files/PPC102Console_Framework/PPC102Console_Framework/bin/Debug/PPC102Console_Framework.exe");
